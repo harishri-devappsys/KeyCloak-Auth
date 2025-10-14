@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    command: start-dev
+    environment:
+      - KEYCLOAK_ADMIN=admin      # The admin username
+      - KEYCLOAK_ADMIN_PASSWORD=admin  # The admin password
+    ports:
+      - "8080:8080"

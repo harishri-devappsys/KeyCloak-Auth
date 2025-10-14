@@ -1,0 +1,17 @@
+server:
+  port: 8081 # Port for relay-service
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak: # A custom name for the registration
+            client-id: relay-service
+            client-secret: AuhYhgNSU8o7Il7GiWC918vXS20qWdSM # Paste the secret from Step 2
+            scope: openid
+            authorization-grant-type: client_credentials
+        provider:
+          # This 'keycloak' name must match the one above
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/valura-services
